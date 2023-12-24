@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de contrato</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2>Formulario de contrato</h2>
+        <form action="generar.php" method="POST" id="formulario">
+
+            <!-- Grupo de campos "Nombre/Razón Social" -->
+            <div class="form-group">
+                <label for="nombre_rasonsocial">Nombre/Razón Social:</label>
+                <input type="text" class="form-control" id="nombre_rasonsocial" name="nombre_rasonsocial" required>
+            </div>
+            <div class="form-group">
+                <label for="nombre_rasonsocial">Nombre completo:</label>
+                <input type="text" class="form-control" id="nombre_comp" name="nombre_comp" required>
+            </div>
+
+
+            <!-- Grupo de campos "Tipo de Documento" -->
+            <div class="form-group">
+                <label>Tipo de Documento:</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="tipo_documento" id="tipo_documento_1" value="0" required checked>
+                    <label class="form-check-label" for="tipo_documento_1">CUIT</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="tipo_documento" id="tipo_documento_2" value="1" required>
+                    <label class="form-check-label" for="tipo_documento_2">CUIL</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="tipo_documento" id="tipo_documento_3" value="2" required>
+                    <label class="form-check-label" for="tipo_documento_3">CDI</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="tipo_documento" id="tipo_documento_4" value="3" required>
+                    <label class="form-check-label" for="tipo_documento_4">DNI/LE/LC</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="tipo_documento" id="tipo_documento_5" value="4" required>
+                    <label class="form-check-label" for="tipo_documento_5">Pasaporte</label>
+                </div>
+            </div>
+
+            <!-- Grupo de campos "Documento" -->
+            <div class="form-group">
+                <label for="documento">Documento:</label>
+                <input type="text" class="form-control" id="documento" name="documento" required>
+            </div>
+
+            <!-- Grupo de campos "Fotocopia" -->
+            <div class="form-group">
+                <label>¿Fotocopia?</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="fotocopia" id="fotocopia_si" value="1" required checked>
+                    <label class="form-check-label" for="fotocopia_si">Sí</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="fotocopia" id="fotocopia_no" value="0" required>
+                    <label class="form-check-label" for="fotocopia_no">No</label>
+                </div>
+            </div>
+
+            <!-- Grupo de campos "numero de partida" -->
+            <div class="form-group">
+                <label for="documento">Número de partida:</label>
+                <input type="text" class="form-control" id="nro_partida" name="nro_partida" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="postal">E-mail:</label>
+                <input type="text" class="form-control" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="postal">Teléfono fijo:</label>
+                <input type="text" class="form-control" id="tel_fijo" name="tel_fijo" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="postal">Teléfono celular:</label>
+                <input type="text" class="form-control" id="cel" name="cel" required>
+            </div>
+            <br>
+            <!-- Grupo de campos "Domicilio" -->
+            <label for="domicilio">Domicilio:</label>
+            <div class="form-group">
+                <label for="domicilio">Calle:</label>
+                <input type="text" class="form-control" id="calle" name="calle" required>
+            </div>
+            <div class="form-row">
+                <!-- Calle 1 -->
+                <div class="form-group col-md-4">
+                    <label for="calle1">Entre calle</label>
+                    <input type="text" class="form-control" id="calle1" name="calle1" required>
+                </div>
+                <!-- Calle 2 -->
+                <div class="form-group col-md-4">
+                    <label for="calle2">y</label>
+                    <input type="text" class="form-control" id="calle2" name="calle2" required>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="nro_calle">Número:</label>
+                    <input type="text" class="form-control" id="numero" name="numero" required>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="postal">Código Postal:</label>
+                    <input type="text" class="form-control" id="postal" name="postal" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col">
+                    <label for="localidad">Localidad:</label>
+                    <input type="text" class="form-control" id="localidad" name="localidad" required>
+                </div>
+                <div class="form-group col">
+                    <label for="localidad">Provincia:</label>
+                    <input type="text" class="form-control" id="provincia" name="provincia" required>
+                </div>
+            </div>
+            <label for="domicilio">Domicilio donde se prestara el servicio:</label>
+            <div class="form-group">
+                <label for="domicilio">Calle:</label>
+                <input type="text" class="form-control" id="calle_inmb" name="calle_inmb" required>
+            </div>
+            <div class="form-row">
+                <!-- Calle 1 -->
+                <div class="form-group col-md-4">
+                    <label for="calle1">Entre calle</label>
+                    <input type="text" class="form-control" id="calle1_inmb" name="calle1_inmb" required>
+                </div>
+                <!-- Calle 2 -->
+                <div class="form-group col-md-4">
+                    <label for="calle2">y</label>
+                    <input type="text" class="form-control" id="calle2_inmb" name="calle2_inmb" required>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="nro_calle">Número:</label>
+                    <input type="text" class="form-control" id="numero_inmb" name="numero_inmb" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-3">
+                    <label for="piso">Piso:</label>
+                    <input type="text" class="form-control" id="piso" name="piso">
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="dpto">Dpto:</label>
+                    <input type="text" class="form-control" id="dpto" name="dpto">
+                </div>
+                   <!-- Circunscripción -->
+                   <div class="form-group col-md-3">
+                    <label for="circunscripcion">Circunscripción</label>
+                    <input type="text" class="form-control" id="circunscripcion" name="circunscripcion" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <!-- Sección -->
+                    <div class="form-group col-md-3">
+                        <label for="seccion">Sección</label>
+                        <input type="text" class="form-control" id="seccion" name="seccion" required>
+                    </div>
+                    <!-- Manzana -->
+                    <div class="form-group col-md-3">
+                        <label for="manzana">Manzana</label>
+                        <input type="text" class="form-control" id="manzana" name="manzana" required>
+                    </div>
+                    <!-- Parcela -->
+                    <div class="form-group col-md-3">
+                        <label for="parcela">Parcela</label>
+                        <input type="text" class="form-control" id="parcela" name="parcela" required>
+                    </div>
+                    <!-- Unidad Funcional -->
+                    <div class="form-group col-md-3">
+                        <label for="unidad_funcional">Unidad Funcional</label>
+                        <input type="text" class="form-control" id="unidad_funcional" name="unidad_funcional" required>
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label for="unidad_funcional">Poligono</label>
+                        <input type="text" class="form-control" id="poligono" name="poligono" required>
+                    </div>
+            </div>
+            <br>
+
+            <!-- Grupo de campos "Fotocopia comprobante" -->
+            <div class="form-group">
+                <label>¿Fotocopia del comprobante?</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="fotocopia_comp" id="fotocopia_comp_si" value="1" required checked>
+                    <label class="form-check-label" for="fotocopia_comp_si">Sí</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="fotocopia_comp" id="fotocopia_comp_no" value="0" required>
+                    <label class="form-check-label" for="fotocopia_comp_no">No</label>
+                </div>
+            </div>
+            <br>
+            <!-- Grupo de campos "servicio" -->
+            <div class="form-group">
+                <label>Servicio solicitado:</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="servicio" id="servicio_1" value="0" required checked>
+                    <label class="form-check-label" for="servicio_1">Agua corriente</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="servicio" id="servicio_2" value="1" required>
+                    <label class="form-check-label" for="servicio_2">Cloacas</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="servicio" id="servicio_3" value="2" required>
+                    <label class="form-check-label" for="servicio_3">X</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="servicio" id="servicio_4" value="3" required>
+                    <label class="form-check-label" for="servicio_4">X</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="servicio" id="servicio_5" value="4" required>
+                    <label class="form-check-label" for="servicio_5">X</label>
+                </div>
+            </div>
+            <br>
+            <div class="form-group">
+                <label>Tipo:</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="tipo_ser" id="tipo_ser_1" value="0" required checked>
+                    <label class="form-check-label" for="tipo_ser_1">B.Público</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="tipo_ser" id="tipo_ser_2" value="1" required>
+                    <label class="form-check-label" for="tipo_ser_2">B.Privado</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="tipo_ser" id="tipo_ser_3" value="2" required>
+                    <label class="form-check-label" for="tipo_ser_3">P.cocina</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="tipo_ser" id="tipo_ser_4" value="3" required>
+                    <label class="form-check-label" for="tipo_ser_4">L.esp</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="tipo_ser" id="tipo_ser_5" value="4" required>
+                    <label class="form-check-label" for="tipo_ser_5">Cámara</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="tipo_ser" id="tipo_ser_6" value="5" required>
+                    <label class="form-check-label" for="tipo_ser_6">Indice</label>
+                </div>
+            </div>
+            <br>
+            <!-- Grupo "declaracion jurada de solicitante" -->
+           
+            <label>Declaracion jurada del solicitante</label>
+            <div class="form-group">
+                <label for="dec_nombre">El que suscribe</label>
+                <input type="text" class="form-control" id="dec_nombre" name="dec_nombre" required>
+            </div>
+            <div class="form-group">
+                <label for="dec_documento">Con documento (tipo y numero)</label>
+                <input type="text" class="form-control" id="dec_documento" name="dec_documento" required>
+            </div>
+            <div class="form-group">
+                <label for="caracter">En su caracter de </label>
+                <input type="text" class="form-control" id="caracter" name="caracter" required>
+                <label for="">Declara que todos los datos aportados en este formulario son fiel expresión de la verdad no habiéndose omitido ni falseado ninguno de ellos.</label>
+            </div>
+                <div id="signature-container">
+                    <canvas id="signature-canvas" width="400" height="200"></canvas>
+                  </div>
+                  <button class="btn-secondary" type="button" id="open-modal-button">Abrir Modal de Firma</button>
+                  <br>
+                  <label>Aclaración:</label>
+                  <div class="form-group">
+                      <input type="text" class="form-control" id="aclaracion" name="aclaracion" required>
+                  </div>
+                <br>
+            <!-- Grupo de campos "prestador del servicio" -->
+            <div class="form-group">
+                <label>Espacio reservado a la prestadora de servicio</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="prestador" id="prestador_1" value="0" required checked>
+                    <label class="form-check-label" for="prestador_1">Completó los datos pero presentó las fotocopias solicitadas.</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="prestador" id="prestador_2" value="1" required>
+                    <label class="form-check-label" for="prestador_2">Completó los datos pero no presentó las fotocopias solicitadas.</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="prestador" id="prestador_3" value="2" required>
+                    <label class="form-check-label" for="prestador_3">Completó parcialmente los datos y presentó la fotocopia solicitada.</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="prestador" id="prestador_4" value="3" required>
+                    <label class="form-check-label" for="prestador_4">Completó parcialmente los datos pero no presentó la fotocopia solicitada.</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="prestador" id="prestador_5" value="4" required>
+                    <label class="form-check-label" for="prestador_5">No completó los datos, no presentó la fotocopia y se nego a firmar.</label>
+                </div>
+            </div>
+            <br>
+            <label>Matriculado autorizado:</label>
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label for="nom_matricula">Sr</label>
+                    <input type="text" class="form-control" id="nom_matricula" name="nom_matricula" required>
+                </div>
+    
+                <div class="form-group col-md-4">
+                    <label for="nro_matricula">Matricula nro</label>
+                    <input type="text" class="form-control" id="nro_matricula" name="nro_matricula" required>
+                </div>
+    
+                <div class="form-group col-md-4">
+                    <label for="dom_matricula">Domicilio</label>
+                    <input type="text" class="form-control" id="dom_matricula" name="dom_matricula" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="tel_matricula">Tel</label>
+                <input type="text" class="form-control" id="tel_matricula" name="tel_matricula" required>
+            </div>
+            <br>
+            <label>Resolución del Consejo de administración:</label>
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label for="resolucion_dia">Por medio del Acta del Consejo de Admin. del dia</label>
+                    <input type="text" class="form-control" id="resolucion_dia" name="resolucion_dia" required>
+                </div>
+    
+                <div class="form-group col-md-4">
+                    <label for="resolucion_mes">de (mes)</label>
+                    <input type="text" class="form-control" id="resolucion_mes" name="resolucion_mes" required>
+                </div>
+    
+                <div class="form-group col-md-4">
+                    <label for="resolucion_ano">de (año)</label>
+                    <input type="text" class="form-control" id="resolucion_ano" name="resolucion_ano" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="nro_asociado">Que lleva el numero</label>
+                <input type="text" class="form-control" id="nro_asociado" name="nro_asociado" required>
+            </div>
+            <label>Se resuelve:</label>
+            <br>
+            <!-- Aceptacion -->
+            <div class="form-group">
+                <label>¿Solicitud aceptada?</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="solicitud_aceptada" id="solicitud_aceptada_si" value="1" required checked>
+                    <label class="form-check-label" for="solicitud_aceptada_si">Sí</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="solicitud_aceptada" id="solicitud_aceptada_no" value="0" required>
+                    <label class="form-check-label" for="solicitud_aceptada_no">No</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="cuotas">Debiendo suscribir a la cantidad de cuotas</label>
+                <input type="text" class="form-control" id="cuotas" name="cuotas" required>
+            </div>
+            <label>indivisibles de un valor nominal de 1$ en todo de acuerdo al estatuto social.</label>
+            <br>
+            <!-- Botón de envío -->
+            <button type="button" id="enviar" class="btn btn-primary">Generar PDF</button>
+        </form>
+    </div>
+
+    <div id="modal" class="modal">
+        <div class="modal-contenido">
+          <span class="close" id="close-modal-button">&times;</span>
+          <canvas id="modal-canvas" width="400" height="200"></canvas>
+          <button id="clear-signature-button">Borrar Firma</button>
+          <button id="save-signature-button">Guardar Firma</button>
+        </div>
+      </div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="mouseScript.js"></script>
+    <script src="noDrawScripts.js"></script>
+    <script src="touchScript.js"></script>
+</body>
+</html>
